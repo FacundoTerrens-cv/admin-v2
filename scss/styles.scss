@@ -1,0 +1,58 @@
+body {
+    background-color: #0e3253;
+    color: white;
+}
+input {
+    width: 100%;
+}
+.form-group div {
+    width: 100%;
+}
+.formLoginContainer {
+    border: 3px #0D6EFD solid;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    .form-control {
+        background-color: #0D6EFD;
+    }
+}
+.bg-black {
+    background-color: black;
+}
+
+// TABLA
+.tableContainer {
+    background-color: #0e3253;
+    color: white;
+}
+td {
+    background-color: #0e3253;
+    color: white;
+    &:hover {
+        color: #ffffff;
+    }
+    
+}
+thead, tfoot {
+    color: white;
+}
+.calendar td:hover {
+    background-color: #3A87AD;
+}
+.card-header {
+    color:white;
+}
+.bg-blue {
+    background-color: #051422;
+    color: white;
+}
+.bg-lightblue {
+    background-color: #0e3253;
+}
+// MODAL
+.modalDark {
+    background-color: black;
+    color: white;
+    border: 3px solid #0DCAF0;
+}

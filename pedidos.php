@@ -18,7 +18,7 @@ include "header.php";
                         $sql = "SELECT * FROM events;";
                         $consulta = mysqli_query($conn, $sql);
                         ?>
-                        <div class="card mb-4">
+                        <div class="card mb-4 bg-blue">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 DataTable Example
@@ -27,30 +27,30 @@ include "header.php";
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Cliente</th>
-                                            <th>Telefono</th>
-                                            <th>Correo Cliente</th>
-                                            <th>Comentario</th>
-                                            <th>Fecha y Horario</th>
-                                            <th>Empleado</th>
-                                            <th>Servicio</th>
-                                            <th>Estado</th>
-                                            <th>Monto</th>
+                                            <th>Client</th>
+                                            <th>Phone Number</th>
+                                            <th>Email</th>
+                                            <th>Comments</th>
+                                            <th>Date & Hour</th>
+                                            <th>Employee</th>
+                                            <th>Service</th>
+                                            <th>State</th>
+                                            <th>Amount</th>
                                             <th>Delete</th>
                                             <th>Edit</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Cliente</th>
-                                            <th>Telefono</th>
-                                            <th>Correo Cliente</th>
-                                            <th>Comentario</th>
-                                            <th>Fecha y Horario</th>
-                                            <th>Empleado</th>
-                                            <th>Servicio</th>
-                                            <th>Estado</th>
-                                            <th>Monto</th>
+                                        <th>Client</th>
+                                            <th>Phone Number</th>
+                                            <th>Email</th>
+                                            <th>Comments</th>
+                                            <th>Date & Hour</th>
+                                            <th>Employee</th>
+                                            <th>Service</th>
+                                            <th>State</th>
+                                            <th>Amount</th>
                                             <th>Delete</th>
                                             <th>Edit</th>
                                         </tr>
@@ -70,13 +70,13 @@ include "header.php";
                                             <td><?php echo $emp['monto']?></td>
                                             <td>
                                                 <form action="" method="post">
-                                                <a class="btn btn-danger" style="background-color: red" type="submit" name="btn" value="eliminar" href="delete_pedidos.php?id=<?php echo $emp['id']?>">Fjerne</a>
+                                                <a class="btn btn-danger" style="background-color: red" type="submit" name="btn" value="eliminar" href="delete_pedidos.php?id=<?php echo $emp['id']?>">Delete</a>
                                             </td>
                                             </form>
                                             </td>
                                             <td>
                                                 <form action="" method="post">
-                                                <a class="btn btn-success" style="background-color: green" type="submit" name="btn" value="eliminar" href="edit_pedidos_front.php?id=<?php echo $emp['id']?>">Redigere</a>
+                                                <a class="btn btn-success" style="background-color: green" type="submit" name="btn" value="eliminar" href="edit_pedidos_front.php?id=<?php echo $emp['id']?>">Edit</a>
                                             </td>
                                             </form>
                                         </tr>
@@ -89,9 +89,9 @@ include "header.php";
                         <div class="card mb-4">
                         <div class="container">
 
-<div class="row">
+<div class="row bg-blue">
     <div class="col-lg-12 text-center">
-        <h1>Pedidos</h1>
+        <h1>Orders</h1>
         <div id="calendar" class="col-centered">
         </div>
     </div>
@@ -105,12 +105,12 @@ include "header.php";
 			
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Agregar Evento</h4>
+				<h4 class="modal-title" id="myModalLabel">Add Event/h4>
 			  </div>
 			  <div class="modal-body">
 				
 				  <div class="form-group">
-					<label for="title" class="col-sm-2 control-label">Titulo</label>
+					<label for="title" class="col-sm-2 control-label">Title</label>
 					<div class="col-sm-10">
 					  <input type="text" name="title" class="form-control" id="title" placeholder="Titulo">
 					</div>
@@ -142,23 +142,23 @@ include "header.php";
 					</div>
 				  </div>
 				  <div class="form-group">
-					<label for="color" class="col-sm-2 control-label">Empleado</label>
+					<label for="color" class="col-sm-2 control-label">Employee</label>
 					<div class="col-sm-10">
 					  <select name="servicio" class="form-control" id="servicio">
-									  <option value="">Seleccionar</option>
+									  <option value="">Select</option>
 						  <option style="color:#000;" value="Corte de Pelo">Corte de pelo</option>
 						  <option style="color:#000;" value="Color">Color</option>
 						</select>
 					</div>
 				  </div>
 				  <div class="form-group">
-					<label for="start" class="col-sm-2 control-label">Fecha Inicial</label>
+					<label for="start" class="col-sm-2 control-label">Initial Date</label>
 					<div class="col-sm-10">
 					  <input type="text" name="start" class="form-control" id="start" readonly>
 					</div>
 				  </div>
 				  <div class="form-group">
-					<label for="end" class="col-sm-2 control-label">Fecha Final</label>
+					<label for="end" class="col-sm-2 control-label">End Date</label>
 					<div class="col-sm-10">
 					  <input type="text" name="end" class="form-control" id="end" readonly>
 					</div>
@@ -167,7 +167,7 @@ include "header.php";
 			  </div>
 			  <div class="modal-footer">
 				<button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
-				<button type="submit" class="btn btn-primary">Guardar</button>
+				<button type="submit" class="btn btn-primary">Save</button>
 			  </div>
 			</form>
 			</div>
@@ -180,15 +180,15 @@ include "header.php";
 		<div class="modal fade" id="ModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		  <div class="modal-dialog" role="document">
 			<div class="modal-content">
-			<form class="form-horizontal" method="POST" action="editEventTitle.php">
+			<form class="form-horizontal" method="POST" action="editEventTitle.php">\admin-main\servicios.php
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Modificar Evento</h4>
+				<h4 class="modal-title" id="myModalLabel">Modify Event</h4>
 			  </div>
 			  <div class="modal-body">
 				
 				  <div class="form-group">
-					<label for="title" class="col-sm-2 control-label">Titulo</label>
+					<label for="title" class="col-sm-2 control-label">Title</label>
 					<div class="col-sm-10">
 					  <input type="text" name="title" class="form-control" id="title" placeholder="Titulo">
 					</div>
@@ -197,7 +197,7 @@ include "header.php";
 					<label for="color" class="col-sm-2 control-label">Color</label>
 					<div class="col-sm-10">
 					  <select name="color" class="form-control" id="color">
-						  <option value="">Seleccionar</option>
+						  <option value="">Select</option>
 						  <option style="color:#0071c5;" value="#0071c5">&#9724; Azul oscuro</option>
 						  <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquesa</option>
 						  <option style="color:#008000;" value="#008000">&#9724; Verde</option>						  
@@ -212,7 +212,7 @@ include "header.php";
 				    <div class="form-group"> 
 						<div class="col-sm-offset-2 col-sm-10">
 						  <div class="checkbox">
-							<label class="text-danger"><input type="checkbox"  name="delete"> Eliminar Evento</label>
+							<label class="text-danger"><input type="checkbox"  name="delete"> Delete Event</label>
 						  </div>
 						</div>
 					</div>
@@ -222,8 +222,8 @@ include "header.php";
 				
 			  </div>
 			  <div class="modal-footer">
-				<button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-				<button type="submit" class="btn btn-primary">Guardar</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				<button type="submit" class="btn btn-primary">Save</button>
 			  </div>
 			</form>
 			</div>
@@ -232,15 +232,10 @@ include "header.php";
                         </div>
                     </div>
                 </main>
-                <footer class="py-4 bg-light mt-auto">
+                <footer class="py-4 bg-black mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
                         </div>
                     </div>
                 </footer>

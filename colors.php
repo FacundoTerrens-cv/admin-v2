@@ -15,7 +15,7 @@ include "header.php";
                         $sql = "SELECT * FROM colors;";
                         $consulta = mysqli_query($conn, $sql);
                         ?>
-                        <div class="card mb-4">
+                        <div class="card mb-4 bg-blue">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 DataTable Example
@@ -44,7 +44,7 @@ include "header.php";
                                             <td><?php echo $emp['nombre']?></td>
                                             <td><?php echo $emp['color']?></td>
                                             <td style = "background-color:<?php echo $emp['color']?>"></td>
-                                            <td><a class="btn btn-success" style="background-color: green" type="submit" name="btn" value="eliminar" href="edit_colors_front.php?id=<?php echo $emp['id']?>&color=<?php echo $emp['color']?>">Redigere</a></td>
+                                            <td><a class="btn btn-success" style="background-color: green" type="submit" name="btn" value="eliminar" href="edit_colors_front.php?id=<?php echo $emp['id']?>&color=<?php echo $emp['color']?>">Edit</a></td>
                                         </tr>
                                    <?php }?>
                                     </tbody>
@@ -54,15 +54,10 @@ include "header.php";
                     </div>
                     </main>
                     
-                <footer class="py-4 bg-light mt-auto">
+                <footer class="py-4 bg-black mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
                         </div>
                     </div>
                 </footer>
