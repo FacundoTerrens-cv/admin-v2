@@ -13,32 +13,32 @@ include "header.php";
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Turnos</h1>
+                    <h1 class="mt-4">Appoinments</h1>
                     <?php
                     $sql = "SELECT id, servicio, estado, data_servicio, empleado  FROM servicios ";
                     $consulta = mysqli_query($conn, $sql);
                     ?>
-                    <div class="card mb-4">
+                    <div class="card mb-4 bg-blue">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Turnos Table
+                            Appoinments Table
                         </div>
                         <div class="card-body">
                             <table id="datatablesSimple">
                                 <thead>
                                     <tr>
-                                        <th>Servicio</th>
-                                        <th>Empleado</th>
-                                        <th>Estado</th>
+                                        <th>Service</th>
+                                        <th>Employee</th>
+                                        <th>State</th>
                                         <th>--</th>
                                         <th>--</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>Servicio</th>
-                                        <th>Empleado</th>
-                                        <th>Estado</th>
+                                    <th>Service</th>
+                                        <th>Employee</th>
+                                        <th>State</th>
                                         <th>--</th>
                                         <th>--</th>
                                     </tr>
@@ -52,13 +52,13 @@ include "header.php";
                                             <td><?php echo $emp['estado'] ?></td>
                                             <td>
                                                 <form action="" method="post">
-                                                    <a class="btn btn-success" style="background-color: red" type="submit" name="btn" value="eliminar" href="manage_servicios.php?id=<?php echo $emp['id'] ?>&valor_servicio=NULL&empleado=<?php echo $emp['empleado'] ?>&estado=Desactivado">Desactivar</a>
+                                                    <a class="btn btn-success" style="background-color: red" type="submit" name="btn" value="eliminar" href="manage_servicios.php?id=<?php echo $emp['id'] ?>&valor_servicio=NULL&empleado=<?php echo $empleado ?>&estado=Desactivado">Deactivate</a>
                                             </td>
                                             </form>
                                             </td>
                                             <td>
                                                 <form action="" method="post">
-                                                    <a class="btn btn-danger" style="background-color: green" type="submit" name="btn" value="eliminar" href="manage_servicios.php?id=<?php echo $emp['id'] ?>&valor_servicio=<?php echo $emp['data_servicio'] ?>&empleado=<?php echo $emp['empleado'] ?>&estado=Activado">Activar</a>
+                                                    <a class="btn btn-danger" style="background-color: green" type="submit" name="btn" value="eliminar" href="manage_servicios.php?id=<?php echo $emp['id'] ?>&valor_servicio=<?php echo $emp['data_servicio'] ?>&empleado=<?php echo $empleado ?>&estado=Activado">Activate</a>
                                             </td>
                                             </form>
                                         </tr>
@@ -68,17 +68,17 @@ include "header.php";
                         </div>
                     </div>
                 </div>
-                <div class="card mb-4">
+                <div class="card mb-4 mx-5 bg-blue">
                   <div class="container">
                         <div class="modal-dialog" role="document">
-                           <div class="modal-content">
+                           <div class="modal-content bg-lightblue">
                               <form class="form-horizontal" method="POST" action="add_servicio_empleado_back.php">
                                  <div class="modal-header">
-                                    <h4 class="modal-title" id="myModalLabel">Asignar Servicio</h4>
+                                    <h4 class="modal-title" id="myModalLabel">Asign Service</h4>
                                  </div>
                                  <div class="modal-body">
                                     <div class="form-group">
-                                    <label for="title" class="col-sm-2 control-label">Categoria</label>
+                                    <label for="title" class="col-sm-2 control-label">Category</label>
                                     <?php
                                         $sql_se = "SELECT * FROM contenido_paginas WHERE tipo_contenido = 'categoria'";
                                         $query_se = mysqli_query($conn, $sql_se);
@@ -90,7 +90,7 @@ include "header.php";
                                     </select>
                                     </div>
                                     <div class="form-group">
-                                    <label for="title" class="col-sm-2 control-label">Servicio</label>
+                                    <label for="title" class="col-sm-2 control-label">Service</label>
                                     <?php
                                         $sql_se = "SELECT * FROM contenido_paginas WHERE tipo_contenido = 'seccion'";
                                         $query_se = mysqli_query($conn, $sql_se);
@@ -102,7 +102,7 @@ include "header.php";
                                     </select>
                                     </div>
                                     <div class="form-group">
-                                    <label for="title" class="col-sm-2 control-label">Empleado</label>
+                                    <label for="title" class="col-sm-2 control-label">Employee</label>
                                     <?php
                                         $sql_se = "SELECT * FROM empleados WHERE rol = 2";
                                         $query_se = mysqli_query($conn, $sql_se);
@@ -115,7 +115,7 @@ include "header.php";
                                     </div>
                                  </div>
                                  <div class="modal-footer">
-                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                    <button type="submit" class="btn btn-primary">Save</button>
                                  </div>
                               </form>
                            </div>
@@ -123,15 +123,10 @@ include "header.php";
                      </div>
                   </div>
             </main>
-            <footer class="py-4 bg-light mt-auto">
+            <footer class="py-4 bg-black mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
                         <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                        <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
-                        </div>
                     </div>
                 </div>
             </footer>
