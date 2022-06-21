@@ -16,7 +16,7 @@ include "header.php";
                         $sql = "SELECT * FROM contenido_paginas WHERE tipo_contenido = 'seccion';";
                         $consulta = mysqli_query($conn, $sql);
                         ?>
-                        <div class="card mb-4 bg-blue">
+                        <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 DataTable Example
@@ -25,22 +25,22 @@ include "header.php";
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Type of Service</th>
-                                            <th>Service</th>
-                                            <th>Title</th>
-                                            <th>Description</th>
-                                            <th>Delete</th>
-                                            <th>Edit</th>
+                                            <th>Tipo Servicio</th>
+                                            <th>Servicio</th>
+                                            <th>Titulo</th>
+                                            <th>Descripcion</th>
+                                            <th>Editar</th>
+                                            <th>Eliminar</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                        <th>Type of Service</th>
-                                            <th>Service</th>
-                                            <th>Title</th>
-                                            <th>Description</th>
-                                            <th>Delete</th>
-                                            <th>Edit</th>
+                                            <th>Tipo Servicio</th>
+                                            <th>Servicio</th>
+                                            <th>Titulo</th>
+                                            <th>Descripcion</th>
+                                            <th>Editar</th>
+                                            <th>Eliminar</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -53,13 +53,13 @@ include "header.php";
                                             <td><?php echo $emp['descripcion']?></td>
                                             <td>
                                                 <form action="" method="post">
-                                                <a class="btn btn-danger" style="background-color: red" type="submit" name="btn" value="eliminar" href="delete_categorias.php?id=<?php echo $emp['id']?>">Delete</a>
+                                                <a class="btn btn-danger" style="background-color: red" type="submit" name="btn" value="eliminar" href="delete_categorias.php?id=<?php echo $emp['id']?>">Fjerne</a>
                                             </td>
                                             </form>
                                             </td>
                                             <td>
                                                 <form action="" method="post">
-                                                <a class="btn btn-success" style="background-color: green" type="submit" name="btn" value="eliminar" href="edit_categorias_front.php?id=<?php echo $emp['id']?>">Edit</a>
+                                                <a class="btn btn-success" style="background-color: green" type="submit" name="btn" value="eliminar" href="edit_categorias_front.php?id=<?php echo $emp['id']?>">Redigere</a>
                                             </td>
                                             </form>
                                         </tr>
@@ -69,17 +69,17 @@ include "header.php";
                             </div>
                         </div>
                     </div>
-                    <div class="card mb-4 bg-blue mx-5">
+                    <div class="card mb-4">
                   <div class="container">
                         <div class="modal-dialog" role="document">
-                           <div class="modal-content bg-lightblue">
-                              <form class="form-horizontal" method="POST" action="add_servicio_back.php">
+                           <div class="modal-content">
+                              <form class="form-horizontal" method="POST" enctype="multipart/form-data"  action="add_servicio_back.php">
                                  <div class="modal-header">
-                                    <h4 class="modal-title" id="myModalLabel">Add Service</h4>
+                                    <h4 class="modal-title" id="myModalLabel">Agregar Servicio</h4>
                                  </div>
                                  <div class="modal-body">
                                  <div class="form-group">
-                                    <label for="title" class="col-sm-2 control-label">Category</label>
+                                    <label for="title" class="col-sm-2 control-label">Categoria</label>
                                     <?php
                                         $sql_se = "SELECT * FROM contenido_paginas WHERE tipo_contenido = 'categoria'";
                                         $query_se = mysqli_query($conn, $sql_se);
@@ -91,26 +91,44 @@ include "header.php";
                                     </select>
                                     </div>
                                     <div class="form-group">
-                                       <label for="title" class="col-sm-2 control-label">Service</label>
+                                       <label for="title" class="col-sm-2 control-label">Servicio</label>
                                        <div class="col-sm-10">
                                           <input type="text" name="servicio" class="form-control" placeholder="Servicio">
                                        </div>
                                     </div>
                                     <div class="form-group">
-                                       <label for="title" class="col-sm-2 control-label">Title</label>
+                                       <label for="title" class="col-sm-2 control-label">Titulo</label>
                                        <div class="col-sm-10">
                                           <input type="text" name="titulo" class="form-control" placeholder="Titulo">
                                        </div>
                                     </div>
                                     <div class="form-group">
-                                       <label for="title" class="col-sm-2 control-label">Description</label>
+                                       <label for="title" class="col-sm-2 control-label">Descripcion</label>
                                        <div class="col-sm-10">
                                           <input type="text" name="descripcion" class="form-control" placeholder="Descripcion">
                                        </div>
                                     </div>
+                                    <div class="form-group">
+                                       <label for="title" class="col-sm-2 control-label">Duration</label>
+                                       <div class="col-sm-10">
+                                          <input type="text" name="duration" class="form-control" placeholder="Duration">
+                                       </div>
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="title" class="col-sm-2 control-label">Price</label>
+                                       <div class="col-sm-10">
+                                          <input type="text" name="price" class="form-control" placeholder="Price">
+                                       </div>
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="title" class="col-sm-2 control-label">Image</label>
+                                       <div class="col-sm-10">
+                                          <input type="file" name="imagen" class="form-control">
+                                       </div>
+                                    </div>
                                  </div>
                                  <div class="modal-footer">
-                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <button type="submit" class="btn btn-primary">Guardar</button>
                                  </div>
                               </form>
                            </div>
@@ -118,10 +136,15 @@ include "header.php";
                      </div>
                   </div>
                 </main>
-                <footer class="py-4 bg-black mt-auto">
+                <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Your Website 2022</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
                         </div>
                     </div>
                 </footer>

@@ -23,7 +23,6 @@ $events = mysqli_query($conn, $sql);
       <link href="css/styles.css" rel="stylesheet" />
       <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
       <link href='css/fullcalendar.css' rel='stylesheet' />
-      <link rel="stylesheet" href="css/style2.css">
       <style>
          body {
          padding-top: 70px;
@@ -38,7 +37,7 @@ $events = mysqli_query($conn, $sql);
       </style>
    </head>
    <body class="sb-nav-fixed">
-      <nav class="sb-topnav navbar navbar-expand navbar-dark bg-blue">
+      <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
          <!-- Navbar Brand-->
          <a class="navbar-brand ps-3" href="index.html">Admin DashBoard</a>
          <!-- Sidebar Toggle-->
@@ -56,68 +55,68 @@ $events = mysqli_query($conn, $sql);
       </nav>
       <div id="layoutSidenav">
       <div id="layoutSidenav_nav">
-      <nav class="sb-sidenav accordion sb-sidenav-dark bg-black" id="sidenavAccordion">
-                <div class="sb-sidenav-menu">
-                    <div class="nav">
-                        <div class="sb-sidenav-menu-heading">Core</div>
-                        <a class="nav-link" href="vacaciones_doc.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Vacations
-                        </a>
-                        <a class="nav-link" href="pedidos_doc.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Orders
-                        </a>
-                        <a class="nav-link" href="dias_empleado.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Days
-                        </a>
-                        <a class="nav-link" href="horarios.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Schedules
-                        </a>
-                        <a class="nav-link" href="servicios_empleado.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Services
-                        </a>
-                        <a class="nav-link" href="logout.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            LogOut
-                        </a>
-                    </div>
-            </nav>
+      <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+         <div class="sb-sidenav-menu">
+            <div class="nav">
+               <div class="sb-sidenav-menu-heading">Core</div>
+               <a class="nav-link" href="vacaciones_doc.php">
+                  <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                  Vacations
+               </a>
+               <a class="nav-link" href="pedidos_doc.php">
+                  <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                  Pedidos
+               </a>
+               <a class="nav-link" href="dias_empleado.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dias
+                            </a>
+               <a class="nav-link" href="horarios.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Horarios 
+                            </a>
+                            <a class="nav-link" href="servicios_empleado.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                               Servicios
+                            </a>
+               <a class="nav-link" href="logout.php">
+                  <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                  LogOut
+               </a>
+            </div>
+      </nav>
       </div>
       <div id="layoutSidenav_content">
          <main>
             <div class="container-fluid px-4">
-               <h1 class="mt-4 text-center">Vacations</h1>
+               <h1 class="mt-4">Vacations</h1>
                <?php
                   $sql = "SELECT * FROM events WHERE empleado = '$empleado' AND vacations = 1;";
                   $consulta = mysqli_query($conn, $sql);
                   ?>
-               <div class="card mb-4 bg-blue">
+               <div class="card mb-4">
                   <div class="card-header">
                      <i class="fas fa-table me-1"></i>
                      Vacations Table
                   </div>
                   <div class="card-body">
-                     <table id="datatablesSimple" class="tableContainer">
+                     <table id="datatablesSimple">
                         <thead>
                            <tr>
                               <th>Title</th>
-                              <th>Start date</th>
-                              <th>End date</th>
-                              <th>Employee</th>
+                              <th>Fecha Inicio</th>
+                              <th>Fecha Final</th>
+                              <th>Empleado</th>
                               <th>Delete</th>
                               <th>Edit</th>
                            </tr>
                         </thead>
                         <tfoot>
                            <tr>
-                           <th>Title</th>
-                              <th>Start date</th>
-                              <th>End date</th>
-                              <th>Employee</th>
+                              <th>Title</th>
+                              <th>Fecha Inicio</th>
+                              <th>Fecha Final</th>
+                              <th>Empleado</th>
                               <th>Delete</th>
                               <th>Edit</th>
                            </tr>
@@ -132,13 +131,13 @@ $events = mysqli_query($conn, $sql);
                               <td><?php echo $emp['empleado']?></td>
                               <td>
                                  <form action="" method="post">
-                                    <a class="btn btn-danger" style="background-color: red" type="submit" name="btn" value="eliminar" href="delete_vacaciones.php?id=<?php echo $emp['id']?>">Delete</a>
+                                    <a class="btn btn-danger" style="background-color: red" type="submit" name="btn" value="eliminar" href="delete_vacaciones.php?id=<?php echo $emp['id']?>">Fjerne</a>
                               </td>
                               </form>
                               </td>
                               <td>
                                  <form action="" method="post">
-                                    <a class="btn btn-success" style="background-color: green" type="submit" name="btn" value="eliminar" href="edit_pedidos_front_doc.php?id=<?php echo $emp['id']?>">Edit</a>
+                                    <a class="btn btn-success" style="background-color: green" type="submit" name="btn" value="eliminar" href="edit_pedidos_front_doc.php?id=<?php echo $emp['id']?>">Redigere</a>
                               </td>
                               </form>
                            </tr>
@@ -148,17 +147,17 @@ $events = mysqli_query($conn, $sql);
                   </div>
                </div>
                <div class="card mb-4">
-                  <div class="container bg-blue pb-5">
+                  <div class="container">
                      <div class="row">
                         <div class="col-lg-12 text-center">
-                           <h1>Orders</h1>
-                           <div id="calendar" class="calendar col-centered">
+                           <h1>Pedidos</h1>
+                           <div id="calendar" class="col-centered">
                            </div>
                         </div>
                      </div>
                      <div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                        <div class="modal-dialog " role="document">
-                           <div class="modal-content modalDark">
+                        <div class="modal-dialog" role="document">
+                           <div class="modal-content">
                               <form class="form-horizontal" method="POST" action="addVacations.php">
                                  <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -277,11 +276,15 @@ $events = mysqli_query($conn, $sql);
                   </div>
                </div>
          </main>
-         <footer class="py-4 mt-auto bg-black">
+         <footer class="py-4 bg-light mt-auto">
          <div class="container-fluid px-4">
          <div class="d-flex align-items-center justify-content-between small">
          <div class="text-muted">Copyright &copy; Your Website 2022</div>
-        
+         <div>
+         <a href="#">Privacy Policy</a>
+         &middot;
+         <a href="#">Terms &amp; Conditions</a>
+         </div>
          </div>
          </div>
          </footer>

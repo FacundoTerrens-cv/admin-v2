@@ -8,18 +8,16 @@
         <meta name="author" content="" />
         <title>Login - SB Admin</title>
         <link href="css/styles.css" rel="stylesheet" />
-        <link href="css/style2.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
-    <body>
+    <body class="bg-primary">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
                     <div class="container">
-                        <h1 class='mt-5 text-center'>Dashboard</h1>
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
-                                <div class=" formLoginContainer card shadow-lg rounded-lg mt-5">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                     <div class="card-body">
                                         <form action="login_back.php" method="POST">
@@ -31,7 +29,7 @@
                                                 <input class="form-control" id="inputPassword" type="password" placeholder="Password" name="pass"/>
                                                 <label for="inputPassword">Password</label>
                                             </div>
-                                            <div class="d-flex align-items-center justify-content-center mt-4 mb-0">
+                                            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                                 <button class="btn btn-primary" type="submit">Login</button>
                                             </div>
                                         </form>
@@ -43,7 +41,7 @@
                 </main>
             </div>
             <div id="layoutAuthentication_footer">
-                <footer class="py-4 bg-footer mt-auto">
+                <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Your Website 2022</div>

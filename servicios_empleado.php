@@ -21,7 +21,6 @@
       <link href="css/styles.css" rel="stylesheet" />
       <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
       <link href='css/fullcalendar.css' rel='stylesheet' />
-      <link rel="stylesheet" href="css/style2.css">
       <style>
          body {
          padding-top: 70px;
@@ -36,7 +35,7 @@
       </style>
    </head>
    <body class="sb-nav-fixed">
-      <nav class="sb-topnav navbar navbar-expand navbar-dark bg-blue">
+      <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
          <!-- Navbar Brand-->
          <a class="navbar-brand ps-3" href="index.html">Admin DashBoard</a>
          <!-- Sidebar Toggle-->
@@ -54,46 +53,46 @@
       </nav>
       <div id="layoutSidenav">
       <div id="layoutSidenav_nav">
-      <nav class="sb-sidenav accordion sb-sidenav-dark bg-black" id="sidenavAccordion">
-                <div class="sb-sidenav-menu">
-                    <div class="nav">
-                        <div class="sb-sidenav-menu-heading">Core</div>
-                        <a class="nav-link" href="vacaciones_doc.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Vacations
-                        </a>
-                        <a class="nav-link" href="pedidos_doc.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Orders
-                        </a>
-                        <a class="nav-link" href="dias_empleado.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Days
-                        </a>
-                        <a class="nav-link" href="horarios.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Schedules
-                        </a>
-                        <a class="nav-link" href="servicios_empleado.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Services
-                        </a>
-                        <a class="nav-link" href="logout.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            LogOut
-                        </a>
-                    </div>
-            </nav>
+      <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+         <div class="sb-sidenav-menu">
+            <div class="nav">
+               <div class="sb-sidenav-menu-heading">Core</div>
+               <a class="nav-link" href="vacaciones_doc.php">
+                  <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                  Vacations
+               </a>
+               <a class="nav-link" href="pedidos_doc.php">
+                  <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                  Pedidos
+               </a>
+               <a class="nav-link" href="horarios.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dias
+                            </a>
+               <a class="nav-link" href="horarios.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Horarios 
+                            </a>
+                            <a class="nav-link" href="servicios_empleado.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                               Servicios
+                            </a>
+               <a class="nav-link" href="logout.php">
+                  <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                  LogOut
+               </a>
+            </div>
+      </nav>
       </div>
       <div id="layoutSidenav_content">
          <main>
             <div class="container-fluid px-4">
-               <h1 class="mt-4">Appoinments</h1>
+               <h1 class="mt-4">Turnos</h1>
                <?php
                   $sql = "SELECT id, servicio, estado, data_servicio  FROM servicios WHERE empleado = '$empleado'";
                   $consulta = mysqli_query($conn, $sql);
                   ?>
-               <div class="card mb-4 bg-blue">
+               <div class="card mb-4">
                   <div class="card-header">
                      <i class="fas fa-table me-1"></i>
                      Turnos Table
@@ -102,16 +101,16 @@
                      <table id="datatablesSimple">
                         <thead>
                            <tr>
-                              <th>Service</th>
-                              <th>State</th>
+                              <th>Servicio</th>
+                              <th>Estado</th>
                               <th>--</th>
                               <th>--</th>
                            </tr>
                         </thead>
                         <tfoot>
                            <tr>
-                              <th>Service</th>
-                              <th>State</th>
+                              <th>Servicio</th>
+                              <th>Estado</th>
                               <th>--</th>
                               <th>--</th>
                            </tr>
@@ -124,13 +123,13 @@
                               <td><?php echo $emp['estado']?></td>
                               <td>
                                  <form action="" method="post">
-                                    <a class="btn btn-success" style="background-color: red" type="submit" name="btn" value="eliminar" href="manage_servicios.php?id=<?php echo $emp['id']?>&valor_servicio=NULL&empleado=<?php echo $empleado?>&estado=Desactivado">Deactivate</a>
+                                    <a class="btn btn-success" style="background-color: red" type="submit" name="btn" value="eliminar" href="manage_servicios.php?id=<?php echo $emp['id']?>&valor_servicio=NULL&empleado=<?php echo $empleado?>&estado=Desactivado">Desactivar</a>
                               </td>
                               </form>
                               </td>
                               <td>
                                  <form action="" method="post">
-                                 <a class="btn btn-danger" style="background-color: green" type="submit" name="btn" value="eliminar" href="manage_servicios.php?id=<?php echo $emp['id']?>&valor_servicio=<?php echo $emp['data_servicio']?>&empleado=<?php echo $empleado?>&estado=Activado">Activate</a>
+                                 <a class="btn btn-danger" style="background-color: green" type="submit" name="btn" value="eliminar" href="manage_servicios.php?id=<?php echo $emp['id']?>&valor_servicio=<?php echo $emp['data_servicio']?>&empleado=<?php echo $empleado?>&estado=Activado">Activar</a>
                               </td>
                               </form>
                            </tr>
@@ -141,10 +140,15 @@
                </div>
                </div>
          </main>
-         <footer class="py-4 bg-black mt-auto">
+         <footer class="py-4 bg-light mt-auto">
          <div class="container-fluid px-4">
          <div class="d-flex align-items-center justify-content-between small">
          <div class="text-muted">Copyright &copy; Your Website 2022</div>
+         <div>
+         <a href="#">Privacy Policy</a>
+         &middot;
+         <a href="#">Terms &amp; Conditions</a>
+         </div>
          </div>
          </div>
          </footer>

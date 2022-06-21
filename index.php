@@ -19,7 +19,7 @@ include "header.php";
                         $sql = "SELECT * FROM empleados;";
                         $consulta = mysqli_query($conn, $sql);
                         ?>
-                        <div class="card mb-4 bg-blue">
+                        <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 DataTable Example
@@ -28,18 +28,18 @@ include "header.php";
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Role</th>
-                                            <th>Delete</th>
-                                            <th>Edit</th>
+                                            <th>Nombre</th>
+                                            <th>Rol</th>
+                                            <th>Eliminar</th>
+                                            <th>Editar</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                        <th>Name</th>
-                                            <th>Role</th>
-                                            <th>Delete</th>
-                                            <th>Edit</th>
+                                            <th>Nombre</th>
+                                            <th>Rol</th>
+                                            <th>Eiliminar</th>
+                                            <th>Editar</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -50,13 +50,13 @@ include "header.php";
                                             <td><?php echo $emp['rol']?></td>
                                             <td>
                                                 <form action="" method="post">
-                                                <a class="btn btn-danger" style="background-color: red" type="submit" name="btn" value="eliminar" href="delete_empleado.php?id=<?php echo $emp['id']?>">Delete</a>
+                                                <a class="btn btn-danger" style="background-color: red" type="submit" name="btn" value="eliminar" href="delete_empleado.php?id=<?php echo $emp['id']?>">Fjerne</a>
                                             </td>
                                             </form>
                                             </td>
                                             <td>
                                                 <form action="" method="post">
-                                                <a class="btn btn-success" style="background-color: green" type="submit" name="btn" value="eliminar" href="edit_empleados_front.php?id=<?php echo $emp['id']?>">Edit</a>
+                                                <a class="btn btn-success" style="background-color: green" type="submit" name="btn" value="eliminar" href="edit_empleados_front.php?id=<?php echo $emp['id']?>">Redigere</a>
                                             </td>
                                             </form>
                                         </tr>
@@ -66,42 +66,42 @@ include "header.php";
                             </div>
                         </div>
                     </div>
-                    <div class="card mb-4 bg-blue">
+                    <div class="card mb-4">
                   <div class="container">
                         <div class="modal-dialog" role="document">
-                           <div class="modal-content bg-lightblue">
+                           <div class="modal-content">
                               <form class="form-horizontal" method="POST" action="add_empleado_back.php">
                                  <div class="modal-header">
-                                    <h4 class="modal-title" id="myModalLabel">Add Employee</h4>
+                                    <h4 class="modal-title" id="myModalLabel">Agregar Empleado</h4>
                                  </div>
                                  <div class="modal-body">
                                     <div class="form-group">
-                                       <label for="title" class="col-sm-2 control-label">Name</label>
+                                       <label for="title" class="col-sm-2 control-label">Nombre</label>
                                        <div class="col-sm-10">
                                           <input type="text" name="nombre"  class="form-control" placeholder="Nombre">
                                        </div>
                                     </div>
                                     <div class="form-group">
-                                       <label for="title" class="col-sm-2 control-label">Lastname</label>
+                                       <label for="title" class="col-sm-2 control-label">Apellido</label>
                                        <div class="col-sm-10">
                                           <input type="text" name="apellido" class="form-control" placeholder="Apellido">
                                        </div>
                                     </div>
                                     <div class="form-group">
-                                       <label for="title" class="col-sm-2 control-label">Email</label>
+                                       <label for="title" class="col-sm-2 control-label">Correo</label>
                                        <div class="col-sm-10">
                                           <input type="text" name="correo" class="form-control" placeholder="example@gmail.com">
                                        </div>
                                     </div>
                                     <div class="form-group">
-                                       <label for="title" class="col-sm-2 control-label">Password</label>
+                                       <label for="title" class="col-sm-2 control-label">Contraseña</label>
                                        <div class="col-sm-10">
                                           <input type="text" name="pass" class="form-control" placeholder="Password">
                                        </div>
                                     </div>
                                  </div>
                                  <div class="modal-footer">
-                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <button type="submit" class="btn btn-primary">Guardar</button>
                                  </div>
                               </form>
                            </div>
@@ -109,10 +109,15 @@ include "header.php";
                      </div>
                   </div>
                 </main>
-                <footer class="py-4 bg-black mt-auto">
+                <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Your Website 2022</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
                         </div>
                     </div>
                 </footer>
